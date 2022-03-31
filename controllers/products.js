@@ -1,10 +1,28 @@
+const Product = require('../models/products');
+
 const getAllProductsStatic = async (req, res) =>{
-	throw new Error('bla bla', 500);
-	res.status(200).json({msg: 'ok'});
+
+	const products = await Product.find(req.query);
+	res.status(200).json({products});
+
 }
 
 const getAllProducts = async (req, res) =>{
-	res.status(200).json({msg: 'ok'});
+
+	const {featured, company} = req.query;
+	const queryObj = {};
+
+	if(featured)
+		queryObj.featured = featured === 'true' ?
+			true:
+			false;
+
+	if(company)
+		queryObj.company = company;
+			
+	const products = await Product.find(queryObj);
+	res.status(200).json({products});
+
 }
 
 module.exports = {
