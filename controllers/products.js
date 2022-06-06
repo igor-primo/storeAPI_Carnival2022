@@ -1,3 +1,9 @@
+
+/*
+ * Base path:
+ * /api/v1
+ */
+
 const Product = require('../models/products');
 
 const getAllProductsStatic = async (req, res) =>{
