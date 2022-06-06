@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const connectionString = process.env.MONGODB_CERTIFICATES;
+const connectionString = 'mongodb://localhost:27017/admin';
 
 
 function myConnect(){

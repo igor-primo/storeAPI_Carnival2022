@@ -7,7 +7,7 @@ const start = async _ => {
 
 	try{
 
-		await connectDB(process.env.MONGODB_CERTIFICATES);
+		await connectDB();
 		await Product.deleteMany();
 		await Product.create(jsonProducts);
 		console.log('sucess');
