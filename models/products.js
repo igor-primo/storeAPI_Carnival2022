@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 
+// Specifies the schema of the objects we are dealing with.
+// Since each object in the DB will be a JSON, of course,
+// the fields are not necessary.
+
 const productSchema = new mongoose.Schema({
 
 	name: {
